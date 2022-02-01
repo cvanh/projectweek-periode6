@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa594ad3-f59f-4e92-b3e1-3d8261415ff7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
