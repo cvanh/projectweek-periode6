@@ -1,6 +1,8 @@
 import Header from "../components/header"
+// import WooCommerce from "../lib/woocommerce"
 
-export default function Home({data}) {
+export default function Home() {
+  // const data = WooCommerce.get("products")
   return (
     <>
     <Header/>
@@ -20,7 +22,7 @@ export default function Home({data}) {
 }
 
 Home.getInitialProps = async (ctx) => {
-  const res = await fetch('http://localhost:3000/api/products/get')
+  const res = await fetch('http://webshop.imaretarded.dev/api/products/get')
   const data = await res.json()
   return { data }
 }
