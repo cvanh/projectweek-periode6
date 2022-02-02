@@ -10,6 +10,7 @@ export default function Home({data}) {
             return(
               <div key={product.id}>
                 <h1>{product.name}</h1>
+                <p>{product.id}</p>
               </div>
             )
           })}
