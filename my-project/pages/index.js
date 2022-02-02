@@ -1,4 +1,5 @@
 import Header from "../components/header";
+import Link from 'next/link';
 
 export default function Home({ data }) {
   return (
@@ -8,10 +9,12 @@ export default function Home({ data }) {
         <h1>Test</h1>
         {data.map((product) => {
           return (
-            <>
+            <Link href={`/detail/${product.id}`}>
+              <div>
                 <h1>{product.name}</h1>
                 <p>{product.id}</p>
-            </>
+                </div>
+            </Link>
           );
         })}
       </div>
@@ -20,7 +23,10 @@ export default function Home({ data }) {
 }
 
 Home.getInitialProps = async (ctx) => {
-  const res = await fetch("http://webshop.imaretarded.dev/api/products/get");
+  const res = await fetch(
+    (process.env.NODE_ENV === "production" ? 
+      "<http://webshop.imaretarded.dev>" : "<http://localhost:3000>") + "/api/products/get"
+  )
   const data = await res.json();
   return { data };
 };

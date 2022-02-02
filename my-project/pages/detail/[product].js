@@ -32,8 +32,9 @@ function Detail({ data }) {
 
 Detail.getInitialProps = async ({ query }) => {
   const res = await fetch(
-    `http://webshop.imaretarded.dev/api/products/view/${query.product}`
-  );
+    (process.env.NODE_ENV === "production" ? 
+      "<http://webshop.imaretarded.dev>" : "<http://localhost:3000>") + `api/products/view/${query.product}`
+  )
   const data = await res.json();
   console.log(data)
   return { data };
