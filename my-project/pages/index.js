@@ -1,7 +1,7 @@
 import Header from "../components/header"
 // import WooCommerce from "../lib/woocommerce"
 
-export default function Home() {
+export default function Home({data}) {
   // const data = WooCommerce.get("products")
   return (
     <>
