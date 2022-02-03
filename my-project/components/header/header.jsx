@@ -15,7 +15,7 @@ export default function Header() {
       <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
           home
         </a>
-        <a href="/catagory" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+        <a href="/catagory/overview" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
           catagory
         </a>
         <a href="/contact" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
