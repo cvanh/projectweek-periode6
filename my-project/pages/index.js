@@ -1,9 +1,10 @@
 import Header from "../components/header";
 import Link from 'next/link';
 
-export default function Home({ data }) {
+export default function Home({ Cookies,data }) {
   return (
     <>
+    {console.log(Cookies)}
       <Header />
       <div className="container mx-auto bg-orange-500">
         <h1>Test</h1>
