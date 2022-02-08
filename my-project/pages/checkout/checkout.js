@@ -1,7 +1,13 @@
 import Header from "../../components/header";
 import GetCart from "../../lib/cart/GetCart";
+import { useEffect } from "react";
+
 function Checkout({ data }) {
-    console.log(GetCart())
+    useEffect(() => {
+        // Perform localStorage action
+        console.log(GetCart(localStorage))
+      }, [])
+      
     return (
         <>
             <Header />

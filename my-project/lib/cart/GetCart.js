@@ -1,5 +1,6 @@
-function GetCart(){
-    return JSON.parse(localStorage.getItem("cart"))
+function GetCart(localStorage){
+    const data = (localStorage.getItem("cart"))
+    return data
 }
 
 module.exports = GetCart;
