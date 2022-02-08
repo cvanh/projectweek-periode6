@@ -1,11 +1,3 @@
-import Header from "../../components/header"
+import Cart from "./cart";
 
-function Cart(){
-    return(
-        <>
-        <Header/>
-        a
-        </>
-    )
-}
-export default Cart
+export default Cart;

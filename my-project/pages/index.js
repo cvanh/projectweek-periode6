@@ -1,10 +1,9 @@
 import Header from "../components/header";
 import Link from 'next/link';
-
-export default function Home({ Cookies,data }) {
+export default function Home({data }) {
   return (
     <>
-    {console.log(Cookies)}
+    {/* {console.log(Cookies)} */}
       <Header />
       <div className="container mx-auto bg-orange-500">
         <h1>Test</h1>
@@ -23,11 +22,12 @@ export default function Home({ Cookies,data }) {
   );
 }
 
-Home.getInitialProps = async (ctx) => {
+Home.getInitialProps = async ({res,req}) => {
+
   const url = (
     (process.env.NODE_ENV === "production" ? 
       "http://webshop.imaretarded.dev" : "http://localhost:3000") + "/api/products/get")  
-  const res = await fetch(url)
-  const data = await res.json();
+  const unfiltered = await fetch(url)
+  const data = await unfiltered.json();
   return { data };
 };
