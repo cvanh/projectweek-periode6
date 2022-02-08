@@ -1,5 +1,7 @@
 import Header from "../../components/header";
+import GetCart from "../../lib/cart/GetCart";
 function Checkout({ data }) {
+    console.log(GetCart())
     return (
         <>
             <Header />
@@ -22,9 +24,6 @@ function Checkout({ data }) {
     );
 }
 
-function GetCart(){
-    return JSON.parse(localStorage.getItem("cart"))
-}
 
 
 //   Detail.getInitialProps = async ({ query }) => {

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Header from "../../components/header";
+import AddToCart from "../../lib/cart/addtocart";
 const cookie = require("cookie-cutter");
 
 
@@ -50,17 +51,6 @@ function Detail({ data }) {
       </div>
     </>
   );
-}
-
-function AddToCart(product) {
-  console.log(product);
-  let cart = JSON.parse(localStorage.getItem("cart") ?? "[]")
-  const data = {
-    "id": product.id,
-    "name": product.name
-  }
-  cart.push(data)
-  localStorage.setItem("cart",JSON.stringify(cart))
 }
 
 Detail.getInitialProps = async ({ query }) => {
