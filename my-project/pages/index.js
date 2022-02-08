@@ -37,7 +37,6 @@ export default function Home({data }) {
 }
 
 Home.getInitialProps = async ({res,req}) => {
-
   const url = (
     (process.env.NODE_ENV === "production" ? 
       "http://webshop.imaretarded.dev" : "http://localhost:3000") + "/api/products/get")  
