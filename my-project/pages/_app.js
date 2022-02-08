@@ -1,4 +1,5 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
+
 
 function MyApp({ Component, pageProps }) {
   const Cookie = Math.random() * 10;
