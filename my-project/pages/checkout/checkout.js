@@ -1,6 +1,5 @@
 import Header from "../../components/header";
-function Detail({ data }) {
-    // const router = useRouter();
+function Checkout({ data }) {
     return (
         <>
             <Header />
@@ -23,6 +22,11 @@ function Detail({ data }) {
     );
 }
 
+function GetCart(){
+    return JSON.parse(localStorage.getItem("cart"))
+}
+
+
 //   Detail.getInitialProps = async ({ query }) => {
 //     const res = await fetch(
 //       (process.env.NODE_ENV === "production" ?
@@ -33,4 +37,4 @@ function Detail({ data }) {
 //     return { data };
 //   };
 
-export default Detail;
+export default Checkout;

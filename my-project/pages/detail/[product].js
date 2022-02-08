@@ -31,6 +31,7 @@ function Detail({ data }) {
           <a href=""></a>
         </div>
         <div className="product_info">
+        <button onClick={() => AddToCart(data)}className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">add to cart</button>
           <h2>{data.name}</h2>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
