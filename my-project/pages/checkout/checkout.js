@@ -16,21 +16,22 @@ function Checkout({ data }) {
                 <div className="inner_container_links">
                     <h2 className="titel_overzicht">Winkelwagen</h2>
                 </div>
-                <form id="form_checkout">
+                <form method="post" action="/api/order/create" id="form_checkout">
                     <input type="text" placeholder="naam" name="name" id="" />
                     <input type="text" placeholder="achternaam" name="surname" id="" />
                     <input type="text" placeholder="E-mail" name="email" id="" />
-                    <input type="text" placeholder="postcode" name="zip-code" id="" />
+                    <input type="text" placeholder="postcode" name="zip_code" id="" />
                     <input type="text" placeholder="stad" name="city" id="" />
+                    <input type="text" placeholder="state" name="state" id="" />
                     <input type="text" placeholder="straat" name="street" id="" />
                     <input type="number" placeholder="huisnummer" name="number" id="" />
+                    <input type="phone" placeholder="phone number" name="phonenumber" id="" />
+                    <input type="submit"/>
                 </form>
             </div>
         </>
     );
 }
-
-
 
 //   Detail.getInitialProps = async ({ query }) => {
 //     const res = await fetch(
