@@ -1,5 +1,8 @@
 const WooCommerceRestApi = require("@woocommerce/woocommerce-rest-api").default;
-require("dotenv").config()
+// require("dotenv").config()
+
+console.assert(process.env.url,'.env not loaded you will get errors')
+console.log(process.env.url)
 
 const WooCommerce = new WooCommerceRestApi({
     url: process.env.url,

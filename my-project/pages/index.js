@@ -1,9 +1,9 @@
 import Header from "../components/header";
 import Link from 'next/link';
+import { BetterFetch } from "../lib";
 export default function Home({data }) {
   return (
     <>
-    {/* {console.log(Cookies)} */}
       <Header />
     <div className="bg-white">
         <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -11,8 +11,8 @@ export default function Home({data }) {
 
             <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                 {data.map((product) => {
-                    console.log(product);
-                    console.log((product.images[0].src))
+                    // console.log(product);
+                    // console.log((product.images[0].src))
                     return (
                         <a key={product.id} href={product.href} className="group">
                             <div className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
@@ -35,11 +35,6 @@ export default function Home({data }) {
 }
 
 Home.getInitialProps = async ({res,req}) => {
-
-  const url = (
-    (process.env.NODE_ENV === "production" ? 
-      "http://webshop.imaretarded.dev" : "http://localhost:3000") + "/api/products/get")  
-  const unfiltered = await fetch(url)
-  const data = await unfiltered.json();
+  const data = await BetterFetch('/api/products/get')
   return { data };
 };

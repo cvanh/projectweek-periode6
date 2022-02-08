@@ -2,10 +2,6 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import Header from "../../components/header";
 import AddToCart from "../../lib/cart/addtocart";
-
-
-
-
 function Detail({ data }) {
   const router = useRouter();
   return (
