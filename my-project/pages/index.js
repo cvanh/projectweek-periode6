@@ -1,5 +1,6 @@
 import Header from "../components/header";
 import Link from 'next/link';
+import BetterFetch from "../lib/BetterFetch";
 export default function Home({data }) {
   return (
     <>
@@ -37,10 +38,6 @@ export default function Home({data }) {
 }
 
 Home.getInitialProps = async ({res,req}) => {
-  const url = (
-    (process.env.NODE_ENV === "production" ? 
-      "http://webshop.imaretarded.dev" : "http://localhost:3000") + "/api/products/get")  
-  const unfiltered = await fetch(url)
-  const data = await unfiltered.json();
+  const data = await BetterFetch('/api/products/get')
   return { data };
 };

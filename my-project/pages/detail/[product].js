@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Header from "../../components/header";
+import BetterFetch from "../../lib/BetterFetch";
 import AddToCart from "../../lib/cart/addtocart";
 
 
@@ -53,12 +54,7 @@ function Detail({ data }) {
 }
 
 Detail.getInitialProps = async ({ query }) => {
-  const res = await fetch(
-    (process.env.NODE_ENV === "production" ?
-      "http://webshop.imaretarded.dev" : "http://localhost:3000") + `/api/products/view/${query.product}`
-  )
-  const data = await res.json();
-  console.log(data);
+  const data = await BetterFetch(`/api/products/view/${query.product}`)
   return { data };
 };
 
