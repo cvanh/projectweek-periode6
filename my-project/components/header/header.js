@@ -15,7 +15,7 @@ export default function Header() {
       <a href="/" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
           home
         </a>
-        <a href="/checkout" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+        <a href="/cart" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
           shopping cart
         </a>
         <a href="/catagory/overview" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">

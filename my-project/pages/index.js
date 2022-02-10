@@ -1,10 +1,10 @@
 import Header from "../components/header";
 import Link from 'next/link';
-
-export default function Home({ Cookies,data }) {
+import BetterFetch from "../lib/BetterFetch";
+export default function Home({data }) {
   return (
     <>
-    {console.log(Cookies)}
+    {/* {console.log(Cookies)} */}
       <Header />
 
 
@@ -16,7 +16,8 @@ export default function Home({ Cookies,data }) {
                 {data.map((product) => {
                     console.log(product.images.src);
                     return (
-                        <a key={product.id} href={product.href} className="group">
+                        <Link key={product.id} href={`/detail/${product.id}`} >
+                          <div className="group">
                             <div className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                                 {product.src}
                                 {product.images.map((image)=>(
@@ -29,7 +30,8 @@ export default function Home({ Cookies,data }) {
                             </div>
                             <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
                             <p className="mt-1 text-lg font-medium text-gray-900">€{product.price}</p>
-                        </a>
+                            </div>
+                        </Link>
                     );
                 })}
             </div>
@@ -40,11 +42,7 @@ export default function Home({ Cookies,data }) {
   );
 }
 
-Home.getInitialProps = async (ctx) => {
-  const url = (
-    (process.env.NODE_ENV === "production" ? 
-      "http://webshop.imaretarded.dev" : "http://localhost:3000") + "/api/products/get")  
-  const res = await fetch(url)
-  const data = await res.json();
+Home.getInitialProps = async ({res,req}) => {
+  const data = await BetterFetch('/api/products/get')
   return { data };
 };

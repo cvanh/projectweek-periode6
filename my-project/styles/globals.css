@@ -1,3 +1,94 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Gavins css for the detail page */
+
+.titel_overzicht {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#detail_container {
+    width: 100%;
+    max-width: 1750px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    background-color: blueviolet;
+}
+
+.image_container {
+    width: 50%;
+    height: 100%;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.detail_titel {
+    width: 100%;
+    height: auto;
+    background-color: red;
+    font-size: 200%;
+    display: flex;
+    justify-content: center;
+    max-width: 1750px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.product_info {
+    width: 50%;
+    height: auto;
+    background-color: blue;
+    padding: 50px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Gavins css for checkout page */
+
+#form_checkout {
+    background-color: red;
+    width: 65%;
+    height: 800px;
+    max-width: 1500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.inner_container_links {
+    width: 35%;
+    height: 800px;
+    background-color: blue;
+}
+
+
+#container_checkout {
+    width: 100%;
+    max-width: 1500%;
+    background-color: yellow;
+    display: flex;
+}
+
+
+
+input {
+    padding: 10px;
+    border: solid #14B8A6 5px;
+    border-radius: 10%;
+
+}
+
+
+
