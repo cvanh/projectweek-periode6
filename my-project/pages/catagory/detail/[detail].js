@@ -15,6 +15,7 @@ function Overview() {
         .then((res) => res.json())
         .then((a) => {
           setResult(a);
+          console.log(a);
         });
     }
     load();
@@ -24,7 +25,7 @@ function Overview() {
     <>
       <Header />
       <h1>catagory detail:</h1>
-      <form method="GET">
+      <form className="group" method="GET">
             <input name="slug" placeholder="slug?"/>
             <input type="checkbox" name="stock"/>
             <label htmlFor="stock">stock?</label>
