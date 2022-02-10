@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="845b7368-9146-4093-93e0-f83426a1f69f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/my-project/components/shopping-side/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-project/components/shopping-side/sidebar-cart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-project/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/pages/index.js" afterDir="false" />
     </list>
@@ -49,7 +51,8 @@
       <workItem from="1643713759107" duration="87000" />
       <workItem from="1643713868399" duration="1739000" />
       <workItem from="1643715964159" duration="1990000" />
-      <workItem from="1644306397647" duration="2343000" />
+      <workItem from="1644306397647" duration="5110000" />
+      <workItem from="1644313313460" duration="1556000" />
     </task>
     <servers />
   </component>
