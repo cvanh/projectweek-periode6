@@ -1,35 +1,38 @@
 import Header from "../../../components/header";
 import Link from "next/link";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from 'next/router'
 
-function Overview() {
+function Overview({query}) {
+  const router = useRouter()
   const [result, setResult] = useState(0);
   useEffect(() => {
-    fetch("/api/category/detail/20")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          setResult(result);
-        })
-  }, [])
-  
+      fetch(`/api/category/detail/${router.query.id}`)
+        .then((res) => res.json())
+        .then((a) => {
+          console.log(a)
+          setResult(a);
+        });
+  }, []);
+
   return (
     <>
       <Header />
-      <h1>catagory detail</h1>
+      <h1>catagory detail:</h1>
+      {/* <form>
+          <input type="submit"/>
+        </form> */}
+
       {console.log(result)}
+      {result && result.map((product) => (
+        <div key={product.id}>
+          <div>{product.name}</div>
+          <div>{product.price}</div>
+          <div>{product.id}</div>
+        </div>
+      ))}
     </>
   );
 }
-
-// Overview.getInitialProps = async (ctx) => {
-//   const url =
-//     (process.env.NODE_ENV === "production"
-//       ? "http://webshop.imaretarded.dev"
-//       : "http://localhost:3000") + "/api/category/overview";
-//   const res = await fetch(url);
-//   const data = await res.json();
-//   return { data };
-// };
 
 export default Overview;
