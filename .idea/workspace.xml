@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="845b7368-9146-4093-93e0-f83426a1f69f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/my-project/components/shopping-side/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-project/components/shopping-side/sidebar-cart.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-project/components/FeatureSections/FeatureSections.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-project/components/FeatureSections/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-project/components/HeroSection/HeroSection.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-project/components/HeroSection/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-project/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/pages/index.js" afterDir="false" />
     </list>
