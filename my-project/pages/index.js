@@ -3,6 +3,7 @@ import Link from 'next/link';
 import BetterFetch from "../lib/BetterFetch";
 import FeatureSections from "../components/FeatureSections";
 import HeroSection from "../components/HeroSection";
+import Footer from "../components/Footer";
 
 // thy lord i have sinned  - signed cvanh
 Home.getInitialProps = async ({ res, req }) => {
@@ -71,6 +72,7 @@ export default function Home({ data }) {
         </div>
       </div>
       <FeatureSections />
+      <Footer />
     </>
   );
 }
