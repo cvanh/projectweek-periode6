@@ -7,7 +7,7 @@ function Overview({query}) {
   const router = useRouter()
   const [result, setResult] = useState(0);
   useEffect(() => {
-      fetch(`/api/category/detail/${router.query.id}`)
+      fetch(`/api/category/detail?category=${router.query.id}`)
         .then((res) => res.json())
         .then((a) => {
           console.log(a)
