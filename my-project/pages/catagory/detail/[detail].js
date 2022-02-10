@@ -1,5 +1,4 @@
 import Header from "../../../components/header";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
@@ -11,10 +10,7 @@ function Overview() {
     function load() {
       fetch(`/api/category/detail/${router.query.detail}`, {
         method: "POST",
-        body: JSON.stringify({
-          category: router.query.detail,
-          min_price: 2
-        }),
+        body: JSON.stringify(router.query),
       })
         .then((res) => res.json())
         .then((a) => {
@@ -29,6 +25,7 @@ function Overview() {
       <Header />
       <h1>catagory detail:</h1>
       <form method="GET">
+            <input name="slug" placeholder="slug?"/>
             <input type="checkbox" name="stock"/>
             <label htmlFor="stock">stock?</label>
           <input type="submit"/>
