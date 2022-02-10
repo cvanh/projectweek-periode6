@@ -1,11 +1,14 @@
 import Header from "../components/header";
 import Link from 'next/link';
 import BetterFetch from "../lib/BetterFetch";
+import FeatureSections from "../components/FeatureSections";
+import HeroSection from "../components/HeroSection";
 export default function Home({data }) {
   return (
     <>
     {/* {console.log(Cookies)} */}
       <Header />
+        <HeroSection />
 
 
     <div className="bg-white">
@@ -37,7 +40,7 @@ export default function Home({data }) {
             </div>
         </div>
     </div>
-
+        <FeatureSections />
     </>
   );
 }
