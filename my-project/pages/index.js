@@ -3,20 +3,39 @@ import Link from 'next/link';
 import BetterFetch from "../lib/BetterFetch";
 import FeatureSections from "../components/FeatureSections";
 import HeroSection from "../components/HeroSection";
-export default function Home({data }) {
+
+// thy lord i have sinned  - signed cvanh
+Home.getInitialProps = async ({res,req}) => {
+  const category = await BetterFetch('/api/category/overview')
+    const featured = await BetterFetch('/api/category/detail/26') // the featured catagory
+    const data = {
+      'category': category,
+      'featured': featured
+  }
+  console.log(data)
+    return {data}
+};
+
+export default function Home({ data }) {
   return (
     <>
-    {/* {console.log(Cookies)} */}
       <Header />
         <HeroSection />
 
 
     <div className="bg-white">
         <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+        <div className="lg:text-center">
+                    <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                        Featured Products
+                    </p>
+                </div>
             <h2 className="sr-only">Products</h2>
-
-            <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-                {data.map((product) => {
+            {
+                console.log(data)
+            }
+            <div className="grid grid-cols-1 mt-10 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+                {data.featured.map((product) => {
                     console.log(product.images.src);
                     return (
                         <Link key={product.id} href={`/detail/${product.id}`} >
@@ -45,7 +64,3 @@ export default function Home({data }) {
   );
 }
 
-Home.getInitialProps = async ({res,req}) => {
-  const data = await BetterFetch('/api/products/get')
-  return { data };
-};
