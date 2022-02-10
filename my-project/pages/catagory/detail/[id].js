@@ -1,11 +1,23 @@
 import Header from "../../../components/header";
 import Link from "next/link";
+import { useState,useEffect } from "react";
 
-function Overview({ data,query }) {
+function Overview() {
+  const [result, setResult] = useState(0);
+  useEffect(() => {
+    fetch("/api/category/detail/20")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setResult(result);
+        })
+  }, [])
+  
   return (
     <>
       <Header />
       <h1>catagory detail</h1>
+      {console.log(result)}
     </>
   );
 }
