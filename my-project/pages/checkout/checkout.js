@@ -19,7 +19,8 @@ function Checkout() {
                     <h2 className="titel_overzicht">Winkelwagen</h2>
 
                     <div className="cartContainer">
-                        {content && content.map(products => (<div className="productInCart">{products.name} 1x </div>))
+                        {content && content.map(products => (<div className="productInCart">{products.name} <br></br>Price: {products.price} </div>))
+                        
                         }
                         <div className="total_price">Totale Prijs: $00,00</div>
                     </div>
