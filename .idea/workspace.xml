@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="845b7368-9146-4093-93e0-f83426a1f69f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-project/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/pages/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="845b7368-9146-4093-93e0-f83426a1f69f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +32,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -51,6 +50,7 @@
       <workItem from="1643715964159" duration="1990000" />
       <workItem from="1644306397647" duration="5110000" />
       <workItem from="1644313313460" duration="1556000" />
+      <workItem from="1644548454623" duration="12000" />
     </task>
     <servers />
   </component>
