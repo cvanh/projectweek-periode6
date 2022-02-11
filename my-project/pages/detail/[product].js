@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { StarIcon } from '@heroicons/react/solid'
 import { RadioGroup } from '@headlessui/react'
 
-const reviews = { href: '#', average: 4, totalCount: 117 }
+const reviews = { href: '#', average: 1 }
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -64,7 +64,7 @@ function Detail({ data }) {
                     />
                   ))}
                 </div>
-                <p className="sr-only">{reviews.average} out of 5 stars</p>
+                <p className="sr-only">{data.rating_count} out of 5 stars</p>
                 <a href={reviews.href} className="ml-3 text-sm font-medium text-teal-500 hover:text-teal-600">
                   {reviews.totalCount} reviews
                 </a>
@@ -85,6 +85,9 @@ function Detail({ data }) {
 
               <div className="space-y-6">
                 <p className="text-base text-gray-900">{data.description}</p>
+              </div>
+              <div className="space-y-6">
+                <p className="text-base text-gray-900">{data.upsell_ids}</p>
               </div>
             </div>
 

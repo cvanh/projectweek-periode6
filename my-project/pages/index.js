@@ -8,7 +8,26 @@ import Footer from "../components/Footer";
 // thy lord i have sinned  - signed cvanh
 Home.getInitialProps = async ({ res, req }) => {
   const category = await BetterFetch('/api/category/overview')
-  const featured = await BetterFetch('/api/category/detail/26') // the featured catagory
+  const featured = await BetterFetch('/api/category/detail/26') // the featured catagory\
+
+  featured.map((product,timer) => {
+
+    product.images.map((image,timer2) => {
+      if (timer2 == 0){
+        let productimage = {
+          src:image.src, 
+          alt:image.alt
+        }
+        featured[timer]["productimage"]=productimage
+      }
+
+
+    })
+
+
+
+  })
+
   const data = {
     'category': category,
     'featured': featured
@@ -39,13 +58,11 @@ export default function Home({ data }) {
                 <Link key={product.id} href={`/detail/${product.id}`} >
                   <div className="group">
                     <div className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                      {product.images[1].map((image)=> (
                         <img
-                          src={image.src}
-                          alt={image.alt}
+                          src={product.productimage.src}
+                          alt={product.productimage.alt}
                           className="w-full h-full object-center object-cover group-hover:opacity-75"
                         />
-                      ))}
                     </div>
                     <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
                     <p className="mt-1 text-lg font-medium text-gray-900">€{product.price}</p>
@@ -71,7 +88,7 @@ export default function Home({ data }) {
               );
             })}
           </div>
-          
+
         </div>
       </div>
       <FeatureSections />
