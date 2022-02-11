@@ -1,11 +1,7 @@
-import Image from "next/image";
-import { useRouter } from "next/router";
 import Header from "../../components/header";
 import BetterFetch from "../../lib/BetterFetch";
 import AddToCart from "../../lib/cart/addtocart";
-import { useState } from 'react'
 import { StarIcon } from '@heroicons/react/solid'
-import { RadioGroup } from '@headlessui/react'
 
 const reviews = { href: '#', average: 1 }
 
@@ -13,11 +9,8 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-
-// const cookie = require("cookie-cutter");
-
 function Detail({ data }) {
-  const router = useRouter();
+  console.log(data)
   return (
     <>
     
@@ -27,7 +20,7 @@ function Detail({ data }) {
       <div className="mt-6 max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-x-8">
       {data.images.map((image) => {
             return (
-              <div className="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
+              <div key={image.id} className="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
               <img
                 src={image.src}
                 className="w-full h-full object-center object-cover"
