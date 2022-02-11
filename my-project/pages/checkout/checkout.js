@@ -54,7 +54,8 @@ function Checkout() {
                         <div className="cartContainer">
                             {content && content.map((products,index) => (
                                 <div key={products.id}>
-                                    <div className="productInCart">{products.name} 1x </div>
+                                    <div className="productInCart">{products.name} 1x <br></br> Euro: {products.price} </div>
+                                    
                                     <input type="hidden" name="product" value={products.id} />
                                 </div>
                             ))
