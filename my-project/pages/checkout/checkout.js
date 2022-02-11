@@ -2,6 +2,7 @@ import Header from "../../components/header";
 import GetCart from "../../lib/cart/GetCart";
 import { useState, useEffect } from "react";
 
+
 function Checkout() {
     const [content, setCartsContent] = useState(0);
     useEffect(() => {

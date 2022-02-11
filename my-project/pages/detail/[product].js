@@ -65,7 +65,7 @@ function Detail({ data }) {
                   ))}
                 </div>
                 <p className="sr-only">{reviews.average} out of 5 stars</p>
-                <a href={reviews.href} className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                <a href={reviews.href} className="ml-3 text-sm font-medium text-teal-500 hover:text-teal-600">
                   {reviews.totalCount} reviews
                 </a>
               </div>
@@ -73,7 +73,7 @@ function Detail({ data }) {
 
             <form className="mt-10">
 
-              <button onClick={() => AddToCart(data)} className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">add to cart</button>
+              <button onClick={() => AddToCart(data)} className="mt-10 w-full bg-teal-500 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">add to cart</button>
 
             </form>
           </div>
