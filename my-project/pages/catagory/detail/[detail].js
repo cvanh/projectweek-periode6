@@ -1,38 +1,49 @@
 import Header from "../../../components/header";
-import Link from "next/link";
 import { useState, useEffect } from "react";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
-function Overview({query}) {
-  const router = useRouter()
+function Overview() {
+  const router = useRouter();
   const [result, setResult] = useState(0);
+
   useEffect(() => {
-      fetch(`/api/category/detail/${router.query.detail}`)
+    function load() {
+      fetch(`/api/category/detail/${router.query.detail}`, {
+        method: "POST",
+        body: JSON.stringify(router.query),
+      })
         .then((res) => res.json())
         .then((a) => {
-          console.log(a)
           setResult(a);
+          console.log(a);
         });
+    }
+    load();
   }, []);
 
   return (
     <>
       <Header />
       <h1>catagory detail:</h1>
-      {/* <form>
+      <form className="group" method="GET">
+            <input name="slug" placeholder="slug?"/>
+            <input type="checkbox" name="stock"/>
+            <label htmlFor="stock">stock?</label>
           <input type="submit"/>
-        </form> */}
-
-      {console.log(result)}
-      {result && result.map((product) => (
-        <div key={product.id}>
-          <div>{product.name}</div>
-          <div>{product.price}</div>
-          <div>{product.id}</div>
-        </div>
-      ))}
+        </form>
+      {result &&
+        result.map((product) => (
+          <div key={product.id}>
+            {/* {console.log(product)} */}
+            <div>{product.name}</div>
+            <div>{product.price}</div>
+            <div>{product.id}</div>
+          </div>
+        ))}
     </>
   );
 }
+
+
 
 export default Overview;
