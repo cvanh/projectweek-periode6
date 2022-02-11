@@ -34,11 +34,12 @@ export default function Home({ data }) {
           <h2 className="sr-only">Products</h2>
           <div className="grid grid-cols-1 mt-10 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             {data.featured.map((product) => {
+              console.log(product);
               return (
                 <Link key={product.id} href={`/detail/${product.id}`} >
                   <div className="group">
                     <div className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
-                      {product.images.map((image) => (
+                      {product.images.map((image)=> (
                         <img
                           src={image.src}
                           alt={image.alt}
@@ -70,6 +71,7 @@ export default function Home({ data }) {
               );
             })}
           </div>
+          
         </div>
       </div>
       <FeatureSections />
