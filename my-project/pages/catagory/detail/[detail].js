@@ -34,7 +34,7 @@ function Overview() {
       {result &&
         result.map((product) => (
           <div key={product.id}>
-            {/* {console.log(product)} */}
+            {console.log(product)}
             <div>{product.name}</div>
             <div>{product.price}</div>
             <div>{product.id}</div>

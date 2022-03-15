@@ -11,7 +11,7 @@ function Overview({ data }) {
       <div className="grid grid-cols-1 mt-10 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             {data.map((category) => {
               return (
-                <Link key={category.id} href={`./catagory/detail/${category.id}`} >
+                <Link key={category.id} href={`./detail/${category.id}`} >
                 <div className="grid grid-cols-1 mt-10 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                     {console.log(category)}
                     <h3 className="mt-4 text-sm text-gray-700">{category.name}</h3>
